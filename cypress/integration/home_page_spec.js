@@ -18,5 +18,7 @@ describe('Login', function() {
       cy.get("@password").type("laurentis")
       cy.get(".btn").contains("Sign in").click()
       cy.url().should("eq", "http://localhost:3030/#/messages")
+      cy.get('#formHorizontalEmail').type('leleux@vinci.be')
+      cy.get('#formHorizontalPassword').type('leleux')
     })
 })
