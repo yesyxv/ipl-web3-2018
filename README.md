@@ -1,4 +1,5 @@
 # web3-boilerplate-2018-2019
+[![Build Status](https://travis-ci.org/yesyxv/ipl-web3-2018.svg?branch=master)](https://travis-ci.org/yesyxv/ipl-web3-2018)
 
 
 This is a boilerplate to build a full stack web application using React, Node.js, Express and Webpack. It is also configured with webpack-dev-server, eslint, prettier and babel.
