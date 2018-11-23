@@ -4,3 +4,4 @@ dist
 *.log
 .env
 cypress/screenshots
+cypress/videos
