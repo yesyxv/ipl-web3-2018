@@ -11,8 +11,8 @@
     "server": "nodemon src/server/bin/www",
     "dev": "cross-env NODE_ENV=development concurrently \"npm run server\" \"npm run client\"",
     "heroku-postbuild": "npm run build",
-    "cy:run": "cypress run",
-    "test": " start-server-and-test dev http://localhost:3030 cy:run"
+    "cy:run": "cypress run --record",
+    "test": "npm run build && start-server-and-test start http://localhost:3030 cy:run"
   },
   "dependencies": {
     "bcrypt": "^3.0.2",
