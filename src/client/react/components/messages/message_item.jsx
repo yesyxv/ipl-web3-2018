@@ -7,7 +7,7 @@ const MessageItem = ({ message, deleteMessage }) => {
 
   return (
     <Row>
-      <Col xs={8}>{message.body}</Col>
+      <Col xs={8}>{message.message}</Col>
       <Col xs={4}>
         <ButtonToolbar>
           <Button variant="outline-primary">
