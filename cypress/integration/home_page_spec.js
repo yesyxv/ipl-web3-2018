@@ -8,6 +8,7 @@ function connexionOk(){
 		})
     
 }
+
 describe('The Home Page', function() {
 	beforeEach(() => {
       cy.visit('/')

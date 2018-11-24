@@ -14,7 +14,7 @@ function addMessage(message){
   			console.log(resp)
   		})
 }
-describe('The Home Page', function() {
+describe('The message page', function() {
 	beforeEach(() => {
       cy.visit('/')
       cy.get("#formHorizontalEmail").type('laurent.leleux@vinci.be')
@@ -39,8 +39,5 @@ describe('The Home Page', function() {
      	cy.get(':nth-child(2)').contains('Oui et toi ?')
      	cy.get(':nth-child(3) > .row > .col-4 > .btn-toolbar > .btn-danger').click()// supp message2
      	cy.get('.list-group').children().should('have.length', 2) // 3 messages restant
-
-
-
     })
 }) 
