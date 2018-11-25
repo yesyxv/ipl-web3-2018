@@ -1,10 +1,10 @@
 
-function addMessage(message){
+function addMessage(message,token){
 	cy.request({
   			method:'POST',
   			url:'/api/messages',
   			headers: {
-		    'authorization': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjoiNWJiZmMzM2ZiYWQ2OTEwMmJkNGQ5ZDI5IiwiZXhwIjoxNTQzMTE1MTgxNTYxLCJpYXQiOjE1NDMwNzE5ODF9.QM6bVFgv8WiFDV0xC95R-z2Om9hPl1HREVV2fxGDtrs',
+		    'authorization':token
 		  	},
 		  	body:{
 		  		'message':message
@@ -24,12 +24,12 @@ describe('The message page', function() {
 	afterEach(()=>{
 		 cy.get('.list-group').children().each((elt)=>{
 		 	elt.find('.row > .col-4 > .btn-toolbar > .btn-danger').click()
-
 		 })
-		addMessage('Bonjour !')
-		addMessage('Bonjour ça va ?')
-		addMessage('Oui et toi ?')
-		addMessage('Oui :)')
+    var JWT=localStorage.getItem('JWT').split('"')[1]
+		addMessage('Bonjour !',JWT)
+		addMessage('Bonjour ça va ?',JWT)
+		addMessage('Oui et toi ?',JWT)
+		addMessage('Oui :)',JWT)
 	})
      it('delete/add message',function(){
      	cy.get('.list-group').children().should('have.length', 4)
